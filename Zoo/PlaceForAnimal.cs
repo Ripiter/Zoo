@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Zoo
 {
@@ -34,7 +35,7 @@ namespace Zoo
             while (Zoo.Open)
             {
                 Smell();
-
+                Thread.Sleep(100);
                 for (int i = 0; i < AnimalsInside.Length; i++)
                 {
                     lock (_lock)
