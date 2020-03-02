@@ -14,11 +14,11 @@ namespace Zoo
         {
             while (Zoo.Open)
             {
-                lock (_lock)
-                {
-                    Smell();
+                Smell();
 
-                    for (int i = 0; i < AnimalsInside.Length; i++)
+                for (int i = 0; i < AnimalsInside.Length; i++)
+                {
+                    lock (_lock)
                     {
                         Shit temp = null;
 
@@ -29,8 +29,8 @@ namespace Zoo
                         if (temp != null)
                             Shits.Add(temp);
 
-                        //Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
                     }
+                    //Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
                 }
             }
         }

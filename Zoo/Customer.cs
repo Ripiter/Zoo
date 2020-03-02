@@ -16,7 +16,7 @@ namespace Zoo
             set
             {
                 satisfaction = value;
-                Console.WriteLine($"[Customer] Customer satisfaction {Satisfaction}");
+                Console.WriteLine($"[Customer] Customer satisfaction {satisfaction}");
             }
         }
 
