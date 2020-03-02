@@ -15,10 +15,7 @@ namespace Zoo
         public static void OpenZoo()
         {
             GenerateAnimals();
-
-            Thread thread = new Thread(ZooIsOpen);
-            thread.Start();
-
+            
             for (int i = 0; i < places.Length; i++)
             {
                 Thread t1 = new Thread(places[i].Open);
@@ -46,15 +43,7 @@ namespace Zoo
             places[1] = new GiraffeHouse(giraffes);
         }
 
-        static void ZooIsOpen()
-        {
-            while (Open == true)
-            {
-                lock (_lock)
-                    Time.CurrectTime += 1;
-                Thread.Sleep(1000);
-            }
-        }
+        
 
         public static ZooKeeper[] zooKeepers = new ZooKeeper[]
         {
