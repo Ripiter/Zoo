@@ -12,7 +12,7 @@ namespace Zoo
             timeThread.Start();
             Zoo.OpenZoo();
 
-            
+            // All Console writelines are for debug info
         }
     }
 }

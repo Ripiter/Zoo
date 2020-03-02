@@ -25,7 +25,6 @@ namespace Zoo
             set { busy = value; }
         }
 
-
         public ZooKeeper(string _name)
         {
             this.Name = _name;

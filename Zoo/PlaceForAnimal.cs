@@ -32,9 +32,46 @@ namespace Zoo
             set { shits = value; }
         }
 
-        public abstract void Open();
+        public virtual void Open()
+        {
+            while (Zoo.Open)
+            {
+                Smell();
 
-        protected abstract void Smell();
+                for (int i = 0; i < AnimalsInside.Length; i++)
+                {
+                    lock (_lock)
+                    {
+                        Shit temp = null;
+
+                        if (AnimalsInside[i].ShitsTakenToday < AnimalsInside[i].AmountOfShitPerDay)
+                            temp = AnimalsInside[i].TakeAShit();
+
+
+                        if (temp != null)
+                            Shits.Add(temp);
+
+                    }
+                    Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
+                }
+            }
+        }
+
+        protected virtual void Smell()
+        {
+            try
+            {
+                for (int i = 0; i < Shits.Count; i++)
+                {
+                    if (Shits[i].TimeAlive > Shits[i].TimeToClean)
+                        Customer.Satisfaction -= 0.1f;
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+            }
+        }
 
         public PlaceForAnimal(params Animal[] animals)
         {
