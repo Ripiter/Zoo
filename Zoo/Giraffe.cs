@@ -20,7 +20,7 @@ namespace Zoo
 
         public override Shit TakeAShit()
         {
-            //Console.WriteLine("[Giraffe] Shit Taken");
+            Console.WriteLine("[Giraffe] Shit Taken");
             ShitsTakenToday += 1;
             return new Shit((int)TimeToRemoveShit);
         }

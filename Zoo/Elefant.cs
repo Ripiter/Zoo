@@ -21,7 +21,7 @@ namespace Zoo
 
         public override Shit TakeAShit()
         {
-            //Console.WriteLine("[Elefant] Shit Taken");
+            Console.WriteLine("[Elefant] Shit Taken");
             ShitsTakenToday += 1;
             return new Shit((int)TimeToRemoveShit);
         }

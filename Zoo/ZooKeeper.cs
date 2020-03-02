@@ -41,7 +41,7 @@ namespace Zoo
             if (shit != null)
             {
                 Busy = true;
-                //Console.WriteLine("[ZooKeeper] Cleaning" + place);
+                Console.WriteLine("[ZooKeeper] Cleaning" + place);
                 CleanShit(shit);
                 place.Shits.Remove(shit);
                 Busy = false;

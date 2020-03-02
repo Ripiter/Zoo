@@ -15,7 +15,11 @@ namespace Zoo
             get { return satisfaction; }
             set
             {
-                satisfaction = value;
+                if (satisfaction > 0)
+                    satisfaction = value;
+                else
+                    satisfaction = 0;
+
                 Console.WriteLine($"[Customer] Customer satisfaction {satisfaction}");
             }
         }

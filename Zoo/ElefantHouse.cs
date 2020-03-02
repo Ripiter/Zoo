@@ -19,7 +19,9 @@ namespace Zoo
                 for (int i = 0; i < Shits.Count; i++)
                 {
                     if (Shits[i].TimeAlive > Shits[i].TimeToClean)
+                    {
                         Customer.Satisfaction -= 0.3f;
+                    }
                 }
             }
             catch (Exception e)
@@ -49,7 +51,7 @@ namespace Zoo
                             Shits.Add(temp);
                     }
 
-                    //Console.WriteLine("[ElefantHouse] shits: " + Shits.Count);
+                    Console.WriteLine("[ElefantHouse] shits: " + Shits.Count);
                 }
             }
         }

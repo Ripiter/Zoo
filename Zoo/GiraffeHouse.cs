@@ -30,7 +30,7 @@ namespace Zoo
                             Shits.Add(temp);
 
                     }
-                    //Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
+                    Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
                 }
             }
         }
