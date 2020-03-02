@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zoo
 {
@@ -51,8 +48,8 @@ namespace Zoo
                         if (temp != null)
                             Shits.Add(temp);
 
+                        Console.WriteLine("["+AnimalsInside[i]+"] shits: " + Shits.Count);
                     }
-                    Console.WriteLine("[GirafeHouse] shits: " + Shits.Count);
                 }
             }
         }
